@@ -1,0 +1,56 @@
+1. First we define a hashmap to map the characters to there respective int value using HASHMAP and MAP
+
+Map<Character, Integer> romanMap = new HashMap<>();
+
+2. Next we assign values to the roman characters and map there respective int value.
+
+	romanMap.put('I', 1);
+        romanMap.put('V', 5);
+        romanMap.put('X', 10);
+        romanMap.put('L', 50);
+        romanMap.put('C', 100);
+        romanMap.put('D', 500);
+        romanMap.put('M', 1000);
+
+3. We define two new variables to hold the value of total and the previous value
+
+int total = 0;
+int prevValue = 0;
+
+4. We define a reverse for loop because roman numerals are often easier to parse from right to left when checking for subtractive cases like IV or IX.
+
+
+//so if the given input is IX we would first be picking up the X.
+
+for(int i = s.length() -1; i =0; i--){
+
+//in this for loop we would first fetch the corresponding value of the roman number using the map
+
+//So the current roman character is X
+
+int currentValue = romanMap.get(s.charAt(i));
+
+//So the currentValue would be 10
+
+if (currentValue < prevValue) {
+  total -= currentValue;
+} 
+// So the current value 10 is not smaller than previous value as there's no previous value and the initial value would be used so 0. 10 is not smaller than 0 so the if condition would be skipped and passed to the else condition.
+
+ else {
+  // So here we are just adding the current value to the total.
+  total += currentValue;
+}
+  prevValue = currentValue;
+}
+
+// In the next iteration the current value will be 1 which would be smalled than the prevValue 10 so the if statement becomes true and the currentValue which is 1 would be then subtraced from the total. Making the total to 9 which is our output here.
+
+// Now return the total
+
+  return total;
+
+}
+
+}
+
