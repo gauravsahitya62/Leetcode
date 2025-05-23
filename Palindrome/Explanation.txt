@@ -1,0 +1,41 @@
+public Boolean isPalindrome(int x)
+
+{
+
+
+1. First we are getting the value of x for ex: 1221
+
+2. Second we are checking if the value is smaller than 0, equals to 0 or ends with 0. If true end the program here and return false.
+
+if(x < 0 || (x % 10 == 0 && x != 0)){
+            return false;
+        }
+
+3. Create a new variable to store the reversed value.
+
+int reversed = 0;
+
+4. Then using the while loop we are only reversing half of the number and not the whole thing and removing that number from the given number. And returning true if the reversed numbers is equals to the given number after the iteration
+
+while (x > reversed) {
+            int digit = x % 10;
+            reversed = reversed * 10 + digit;
+            x = x / 10;
+        }
+
+// 1st Iteration
+
+// int digit = x % 10;   // 1221 % 10 = 1
+// reversed = reversed * 10 + digit;  // 0 * 10 + 1 = 1
+// x = x / 10;  // 1221 / 10 = 122
+
+// 2nd iteration
+
+// digit = 122 % 10 = 2
+// reversed = 1 * 10 + 2 = 12
+// x = 122 / 10 = 12
+
+so after the 2nd iteration the reversed number is 12 and the given number is also 12 so we return true.
+
+
+}
