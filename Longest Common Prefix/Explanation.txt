@@ -1,0 +1,77 @@
+//strs = ["flower", "flow", "flight"];
+
+1. For loop for each character in the first string
+
+if(strs.length == 0 || strs == null) return "";
+
+for(int i = 0; i <= strs[0].length(); i++){
+
+}
+
+2. Assign a new variable to hold the value of current character
+
+if(strs.length == 0 || strs == null) return "";
+
+for(int i = 0; i <= strs[0].length(); i++){
+
+var c = strs[0].charAt(i);
+
+
+}
+
+3. Inner for loop to match the current character with the other string
+
+if(strs.length == 0 || strs == null) return "";
+
+for(int i = 0; i <= strs[0].length(); i++){
+
+var c = strs[0].charAt(i);
+
+for(int j = 1; j <= strs[i].length(); j++){
+
+}
+
+4. Check if current string is too short or characters don’t match
+
+
+
+if(strs.length == 0 || strs == null) return "";
+
+for(int i = 0; i <= strs[0].length(); i++){
+
+var c = strs[0].charAt(i);
+
+for(int j = 1; j <= strs[i].length(); j++){
+
+if(i >= strs[j].length() || strs[j].charAt(i) != c){
+
+return strs[0].substring(0,i);
+
+}
+
+}
+
+
+5. Return strs
+
+4. Check if current string is too short or characters don’t match
+
+
+
+if(strs.length == 0 || strs == null) return "";
+
+for(int i = 0; i <= strs[0].length(); i++){
+
+	var c = strs[0].charAt(i);
+
+	for(int j = 1; j <= strs[i].length(); j++){
+
+		if(i >= strs[j].length() || strs[j].charAt(i) != c){
+
+		return strs[0].substring(0,i);
+
+	}	
+
+
+}
+return strs[0];
